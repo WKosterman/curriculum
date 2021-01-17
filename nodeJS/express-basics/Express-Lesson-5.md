@@ -23,13 +23,3 @@ By the end of this lesson, you should be able to do the following:
 1. Let's get back to [the tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms)
 2. Read about deploying your app in the [last article](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment) in this tutorial.
 </div>
-
-### Student Solutions
-To add your solution to the list below, edit this [file](#) (located on The Odin Project's "curriculum" GitHub repository). See the section on [Contributing](http://github.com/TheOdinProject/curriculum/blob/master/contributing.md) for more instructions.
-
-<details markdown="block">
-  <summary> Show Student Solutions </summary>
-
-- Add your solution below this line!
-
-</details>

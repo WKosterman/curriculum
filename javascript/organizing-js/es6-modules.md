@@ -3,18 +3,33 @@ Separate from the __module pattern__ that we discussed in an earlier lesson, "mo
 
 Don't be fooled! We're going to cover much more than just the new module syntax in this lesson! Before we can really _use_ these modules, we're going to have to learn about __npm__ and __webpack__ which are both topics that will be _very_ useful to you even beyond this lesson. In the end, the modules themselves are simple to implement, so we're going to take this chance to learn about a few other things.
 
+### Learning Outcomes
+After completing this lesson, you will be able to:
+
+- Explain what npm is and where it was commonly used before being adopted on the frontend.
+- Describe what `npm init` does and what `package.json` is.
+- Know how to install packages using npm.
+- Describe what a JavaScript module bundler like webpack is.
+- Explain what the concepts "entry" and "output" mean as relates to webpack.
+- Briefly explain what a development dependency is.
+- Explain what "transpiling code" means and how it relates to frontend development.
+- Briefly describe what a task runner is and how it's used in frontend development.
+- Describe how to write an npm automation script.
+- Explain one of the main benefits of writing code in modules.
+- Explain "named exports" and "default exports".
+
 ### The History of JavaScript
 
 Why do we even need or want this stuff? What do you gain from all of this added complexity? These are good questions.. with good answers.
 
-- Read [this article](https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70) for a bit of a history lesson. It's long, but it puts what we're doing here in great perspective. You don't _have_ to code along with the examples - the tutorials we cover later will go through basically the same process. But it's good practice and going through the same process multiple times will help it stick faster.
+- Read [this article](https://peterxjang.com/blog/modern-javascript-explained-for-dinosaurs.html) for a bit of a history lesson. It's long, but it puts what we're doing here in great perspective. You don't _have_ to code along with the examples - the tutorials we cover later will go through basically the same process. But it's good practice and going through the same process multiple times will help it stick faster. **NOTE**: If you code along with the example, you may encounter an error when you run `./node_modules/.bin/webpack index.js --mode=development`. If so, running `npx webpack ./index.js --mode=development` instead should resolve the issue. 
 - Seriously.. spend some time with that article - it really clarifies the 'WHY' of the rest of this lesson.
 
 ### npm
 
 The __node package manager__ is a command line tool that gives you access to a gigantic repository of plugins, libraries and tools. If you have done our Fundamentals course, you will probably have encountered it when you installed the Jasmine testing framework to do our exercises.
 
-1. Take a couple minutes to watch [this video](https://docs.npmjs.com/getting-started/what-is-npm) - a great introduction to npm.
+1. Take a couple minutes to read the [About npm](https://docs.npmjs.com/getting-started/what-is-npm) page - a great introduction to npm.
 2. [This video](https://docs.npmjs.com/getting-started/installing-npm-packages-locally) teaches you how to install packages with npm.
 3. [This tutorial](https://docs.npmjs.com/getting-started/using-a-package.json) covers the `package.json` file, which you can use to manage your project's dependencies
 4. If you run into trouble at any point you can check out [the official docs page](https://docs.npmjs.com/) for more tutorials and documentation.
@@ -35,7 +50,7 @@ To get us started we are going to refer to the official documentation.
 
 Let's discuss what's going on there. After installing webpack using npm we set up a simple project that required an external library (lodash - check it out [here](https://lodash.com/) if it's new to you) using a simple `script` tag. The site lists a few reasons why this is probably _not_ ideal and then steps through using webpack to accomplish the same thing.
 
-There are a couple of key concepts to understanding how webpack works - __entry__ and __output__. In this example, we rearranged the files into a `src` and `dist` folder. Technically we could have called those folders anything, but those names are typical. `src` is our _source_ directory. In other words, `src` is where we write all of the code that webpack is going to bundle up for us. When webpack runs, it goes through all of our files looking for any `import` statements and then compiles _all_ of the code we need to run our site into a single file inside of the `dist` folder (short for _distrubution_). Our __entry__ file, then is the main application file that links (either directly or indirectly) to all of the other modules in our project. In this example, it is `/src/index.js`. The __output__ file is the compiled version - `dist/bundle.js`.
+There are a couple of key concepts to understanding how webpack works - __entry__ and __output__. In this example, we rearranged the files into a `src` and `dist` folder. Technically we could have called those folders anything, but those names are typical. `src` is our _source_ directory. In other words, `src` is where we write all of the code that webpack is going to bundle up for us. When webpack runs, it goes through all of our files looking for any `import` statements and then compiles _all_ of the code we need to run our site into a single file inside of the `dist` folder (short for _distribution_). Our __entry__ file, then is the main application file that links (either directly or indirectly) to all of the other modules in our project. In this example, it is `/src/index.js`. The __output__ file is the compiled version - `dist/main.js`.
 
 - browse [this document](https://webpack.js.org/concepts/) for more details. We'll talk plugins and loaders in another lesson.
 
@@ -69,7 +84,7 @@ To pull it all together, let's write a simple module and then include it in our 
 
 ~~~
 ├── dist
-│   ├── bundle.js
+│   ├── main.js
 │   └── index.html
 ├── src
 │   └── index.js
@@ -78,7 +93,7 @@ To pull it all together, let's write a simple module and then include it in our 
 └── webpack.config.js
 ~~~
 
-and you should be able to bundle and run webpack by simply typing `webpack` in the terminal.
+and you should be able to bundle and run webpack by simply typing `npx webpack` in the terminal.
 
 Add a new file to the `src` directory called `myName.js` with the following contents:
 
@@ -102,11 +117,10 @@ function component() {
   return element;
 }
 
-  document.body.appendChild(component());
-
+document.body.appendChild(component());
 ~~~
 
-Easy! Now, if you run `webpack` in your project directory your page should show our new function being used.
+Easy! Now, if you run `npx webpack` in your project directory your page should show our new function being used.
 
 There are 2 different ways to use exports in your code: named exports and default exports. Which option you use depends on what you're exporting. As a general rule if you want to export multiple functions use named exports with this pattern:
 
@@ -115,8 +129,8 @@ const functionOne = () => 'ONE'
 const functionTwo = () => 'TWO'
 
 export {
- functionOne,
-   functionTwo
+  functionOne,
+  functionTwo
 }
 ~~~
 

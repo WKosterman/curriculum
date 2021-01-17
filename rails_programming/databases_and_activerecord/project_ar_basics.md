@@ -1,6 +1,6 @@
 ### Introduction
 
-In this project, you'll get to spend some quality time with models.  The tutorial will give you a chance to apply some of what you've learned in a structured environment and then the additional project will give you the chance to do it on your own.
+In this project, you'll get to spend some quality time with models.  We will be doing some data modeling and putting your active record knowledge to practice by building your own light weight Reddit clone.
 
 ### Warmup: Thinking Data First
 
@@ -55,16 +55,7 @@ Remember, if you feel like you will be hard coding data multiple times, it's pro
   4. You want to build a message board like [Hacker News](http://news.ycombinator.com).  Users can post links.  Other users can comment on these submissions or comment on the comments.  How would you make sure a comment knows where in the hierarchy it lives?
 </div>
 
-### Project 1: Ruby on Rails Tutorial
-
-This chapter of the tutorial will give you a chance to start working with the database and models.  It will guide you through setting up your first database migrations, making sure your user inputs are properly validated, and how to add a secure password to your User model.
-
-### Your Task
-<div class="lesson-content__panel" markdown="1">
-  1. Do the [Ruby on Rails Tutorial chapter 6](https://www.railstutorial.org/book/modeling_users), "Modeling Users".
-</div>
-
-### Project 2: Micro-Reddit
+### Project: Micro-Reddit
 
 Let's build [Reddit](http://reddit.com).  Well, maybe a very junior version of it called `micro-reddit`.  In this project, you'll build the data structures necessary to support link submissions and commenting.  We won't build a front end for it because we don't need to... you can use the Rails console to play around with models without the overhead of making HTTP requests and involving controllers or views.
 
@@ -75,7 +66,7 @@ Let's build [Reddit](http://reddit.com).  Well, maybe a very junior version of i
 #### Get Started
 
 1. Just like in the warmup, plan out what data models you would need to allow users to be on the site (don't worry about login/logout or securing the passwords right now), to submit links ("posts"), and to comment on links.  Users do NOT need to be able to comment on comments... each comment refers to a Post.
-2. Generate a new rails app from the command line (`$ rails _5.2.1_ new micro-reddit`) and open it up.  We'll use the default SQLite3 database so you shouldn't have to change anything on that front.
+2. Generate a new rails app from the command line (`$ rails new micro-reddit`) and open it up.  We'll use the default SQLite3 database so you shouldn't have to change anything on that front.
 3. Generate your User model and fill out the migration to get the columns you want.
 4. Run the migration with `$ rails db:migrate`.  You can use `$ rails db:rollback` if you realize you forgot anything or just create a new migration for the correction (which might involve the `#add_column` `#remove_column` or `#change_column` commands).  See the [Rails API Documentation](http://api.rubyonrails.org/classes/ActiveRecord/Migration.html) for details on syntax and available methods.
 
@@ -114,129 +105,6 @@ Let's build [Reddit](http://reddit.com).  Well, maybe a very junior version of i
 If any of those don't work, double check your associations.  Sometimes the error messages can be helpful in prompting you for how to set up those associations.
 
 </div>
-
-### Student Solutions
-Send us your solution so we can show others! Submit a link to the Github repo with your files in it here using any of the methods listed on the [contributing page](http://github.com/TheOdinProject/curriculum/blob/master/contributing.md).  Please include your partner's github handle somewhere in the description if they would like attribution.
-
-<details markdown="block">
-  <summary> Show Student Solutions </summary>
-
-* Add your solution below this line!
-* [Braxton Lemmon's Solution](https://github.com/braxtonlemmon/micro-reddit)
-* [Onur Temiz's Solution](https://github.com/temizonur/micro-reddit)
-* [Kevin Vuong's Solution](https://github.com/fffear/micro_reddit)
-* [Learnsometing's Solution](https://github.com/learnsometing/Rails-Micro_Reddit)
-* [Chris Wegscheid's Solution](https://github.com/cwegscheid08/micro_reddit)
-* [Noah Maizels' Solution](https://github.com/noahniuwa/micro-reddit-odin-tutorial-project)
-* [Simon Tharby's solution](https://github.com/jinjagit/micro-reddit)
-* [Stefano Merazzi's solution](https://github.com/ste001/micro-reddit)
-* [Jason McKee's solution](https://github.com/jttmckee/micro-reddit)
-* [Dennis Cope's Solution](https://github.com/coped/micro-reddit)
-* [Ovsjah Schweinefresser's Solution](https://github.com/Ovsjah/micro-reddit)
-* [goodjobbin85's solution](https://github.com/goodjobbin85/micro-reddit)
-* [prw001's Solution](https://github.com/prw001/micro_reddit)
-* [Ayoub's solution](https://github.com/Skobraf/micro-reddit)
-* [Jesus' Solution](https://github.com/jsgilberto/micro-reddit)
-* [Btreims's solution](https://github.com/btreim/micro_reddit)
-* [0zra's solution](https://github.com/0zra/micro-reddit)
-* [Javier Machin's Solution](https://github.com/Javier-Machin/micro-reddit)
-* [Omar Moataz's Solution](https://github.com/OmarMoataz/micro-reddit)
-* [Raiko's Solution](https://github.com/Cypher0/micro-reddit)
-* [theghall's solution](https://github.com/theghall/odin-micro-reddit.git)
-* [Jmooree30's solution](https://github.com/jmooree30/micro-reddit)
-* [Clayton Sweeten's solution](https://github.com/cjsweeten101/micro-reddit)
-* [Jonathan Yiv's solution](https://github.com/JonathanYiv/micro-reddit)
-* [justinckim3's solution](https://github.com/justinckim3/micro_reddit)
-* [Nikolay Dyulgerov's solution](https://github.com/NicolayD/micro-reddit)
-* [mindovermiles262's Solution](https://github.com/mindovermiles262/micro-reddit)
-* [holdercp's solution](https://github.com/holdercp/micro-reddit)
-* [jfonz412's solution](https://github.com/jfonz412/micro-reddit)
-* [nmac's solution](https://github.com/nmacawile/micro-reddit)
-* [Devon's solution](https://github.com/defitjo/micro-reddit)
-* [ToTenMilan's solution](https://github.com/ToTenMilan/the_odin_project/tree/master/rails/micro-reddit)
-* [Orlando's Solution](https://github.com/orlandodan14/Ruby-on-Rails/tree/master/Micro_reddit)
-* [RichJDSmith's Solution](https://github.com/richjdsmith/micro-reddit)
-* [Jib's Solution](https://github.com/NuclearMachine/odin_rails/tree/master/micro-reddit)
-* [Austin's solution](https://github.com/CouchofTomato/micro_reddit)
-* [David Chapman's solution](https://github.com/davidchappy/odin_training_projects/tree/master/micro-reddit)
-* [Voizzzz' solution](https://github.com/voizzzz/microreddit)
-* [Jamie's solution](https://github.com/Jberczel/odin-projects/tree/master/micro-reddit) - [walkthrough](http://jberczel.github.io/micro-reddit-walkthrough/)
-* [Afshin's solution](https://github.com/afshinator/micro-reddit)
-* [Marina Sergeyeva's solution](https://github.com/imousterian/OdinProject/tree/master/Project3_ActiveRecordBasics/micro-reddit)
-* [Donald's solution](https://github.com/donaldali/odin-rails/tree/master/micro-reddit)
-* [TomTom's solution](https://github.com/tim5046/projectOdin/tree/master/Rails/microReddit/micro-reddit)
-* [Adrian Badarau's solution](https://github.com/adrianbadarau/project-micro-redit)
-* [Tommy Noe's solution](https://github.com/thomasjnoe/micro-reddit)
-* [Vincent's solution](https://github.com/wingyu/micro_reddit)
-* [Vidul's solution](https://github.com/viparthasarathy/micro-reddit)
-* [Kate McFaul's solution](https://github.com/craftykate/odin-project/tree/master/Chapter_04-Advanced_Rails/micro-reddit)
-* [Nikola Čvorović's solution](https://github.com/cvorak/micro-reddit)
-* [Julian Feliciano's solution](https://github.com/JulsFelic/micro-reddit)
-* [Sasikala's solution](https://github.com/Sasikala-Ravichandran/micro-reddit)
-* [Jason Matthews' solution](https://github.com/fo0man/micro-reddit)
-* [Dominik Stodolny's solution](https://github.com/dstodolny/micro-reddit)
-* [Trump's solution](https://github.com/trump812/micro-reddit)
-* [Lara Finnegan's solution](https://github.com/lcf0285/micro-reddit)
-* [Kevin Mulhern's solution](https://github.com/KevinMulhern/Micro-reddit)
-* [Eduardo Frias' solution](https://github.com/feek1g/theodinproject/tree/master/RubyOnRails/micro-reddit)
-* [Frank Peelen's solution](https://github.com/FrankPeelen/micro-reddit)
-* [Bhupendra Singh's solution](https://github.com/bhupendra11/Odin-RubyOnRails-full/tree/master/micro-reddit)
-* [dchen71's solution](https://github.com/dchen71/micro-reddit)
-* [Matias Pan's solution](https://github.com/kriox26/micro-reddit)
-* [Alex Chen's solution](https://github.com/Chenzilla/micro_reddit)
-* [Dan Hoying's solution](https://github.com/danhoying/micro_reddit)
-* [Aviv Levinsky's solution](https://github.com/pugsiman/micro-redit)
-* [Hassan Mahmoud's solution](https://github.com/HassanTC/Micro-Reddit)
-* [Alex Tsiras' solution](https://github.com/arialblack14/micro_reddit)
-* [Patrick Mallee's solution](https://github.com/patmallee/micro-reddit)
-* [cdouglass's solution](https://github.com/cdouglass/odin-project-exercises/tree/master/rails/micro-reddit)
-* [srashidi's solution](https://github.com/srashidi/Active_Record_Basics/tree/master/micro-reddit)
-* [Radi Totev's solution](https://github.com/raditotev/micro-reddit)
-* [Luke Walker's solution](https://github.com/ubershibs/rails_course/tree/master/micro-reddit)
-* [Scott Bobbitt's solution](https://github.com/sco-bo/micro-reddit)
-* [Matt Velez's solution](https://github.com/Timecrash/rails-projects/tree/master/micro-reddit)
-* [Max Gallant's solution](https://github.com/mcgalcode/micro-reddit)
-* [Miguel Herrera's solution](https://github.com/migueloherrera/micro-reddit)
-* [James Brooks's solution](https://github.com/jhbrooks/micro-reddit)
-* [Akshay Bharwani's solution](https://github.com/akshaybharwani/micro-reddit)
-* [Sander Schepens's solution](https://github.com/schepens83/theodinproject.com/tree/master/rails/project6--micro-reddit/micro-reddit)
-* [Arthur Vieira's solution](https://github.com/arthur-vieira/micro-reddit)
-* [Fabricio Carrara's solution](https://github.com/fcarrara/micro_reddit)
-* [Deepak's solution](https://github.com/Deepak5050/reddit_two/tree/master/app/models)
-* [Earth35's solution](https://github.com/Earth35/models-exercise)
-* [David Chapman's solution](https://github.com/davidchappy/odin_training_projects/tree/master/micro-reddit)
-* [Shala Qweghen's solution](https://github.com/ShalaQweghen/micro_reddit)
-* [Jiazhi Guo's solution](https://github.com/jerrykuo7727/micro-reddit)
-* [djhart's solution](https://github.com/djhart/micro-reddit)
-* [csrail's solution](https://github.com/csrail/micro-reddit/tree/master/app/models)
-* [Dylan's solution](https://github.com/resputin/the_odin_project/tree/master/Rails/micro-reddit)
-* [Jakub Peikert's solution](https://github.com/JPeikert/odin_project/tree/master/rails/active_record/micro-reddit)
-* [Dckwong's solution](https://github.com/dckwong/micro-reddit)
-* [at0micr3d's solution](https://github.com/at0micr3d/micro-reddit)
-* [Sophia Wu's solution](https://github.com/SophiaLWu/micro-reddit)
-* [Joe Himes's solution](https://github.com/deedle42/micro-reddit)
-* [Niño Mollaneda's solution](https://github.com/ninoM/micro-reddit)
-* [Tom Westerhout's solution](https://github.com/TomWesterhout/micro-reddit)
-* [Luján Fernaud's solution](https://github.com/lujanfernaud/rails-micro-reddit)
-* [Pat's solution](https://github.com/Pat878/micro-reddit)
-* [Francisco Carlos's solution](https://github.com/fcarlosdev/the_odin_project/tree/master/micro-reddit)
-* [Punnadittr's solution](https://github.com/punnadittr/micro_reddit)
-* [Agon's solution](https://github.com/AgonIdrizi/micro-reddit)
-* [Malaika's Solution](https://github.com/malaikaMI/Micro-reddit)
-* [Jamesredux's Solution](https://github.com/Jamesredux/micro-reddit)
-* [ParamagicDev's Soltuion](https://github.com/ParamagicDev/micro-reddit)
-* [Slaven K's Soltuion](https://github.com/Everdrought/micro-reddit)
-* [bchalman's Soltuion](https://github.com/bchalman/micro-reddit)
-* [Tommy's Solution](https://github.com/hoangtommy/micro-reddit)
-* [Alex's Solution](https://github.com/alexcorremans/micro-reddit)
-* [Brendaneus' Solution](https://github.com/brendaneus/micro-reddit)
-* [Leila Alderman's Solution](https://github.com/leila-alderman/micro-reddit)
-* [JamCry's Solution](https://github.com/jamcry/micro-reddit)
-* [Vanny96's Solution](https://github.com/vanny96/micro_reddit)
-* [Cody B's Solution](https://github.com/CodyLBuffaloe/micro-reddit)
-* [Vitaly Osipov's Solution](https://github.com/vi7ali/micro-reddit)
-
-</details>
 
 ### Additional Resources
 This section contains helpful links to other content. It isn't required, so consider it supplemental for if you need to dive deeper into something.
